@@ -43,7 +43,7 @@ public class ExactitudView extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblAdecuacion = new JLabel("Exactitud");
-		lblAdecuacion.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblAdecuacion.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblAdecuacion.setBounds(134, 11, 160, 48);
 		contentPane.add(lblAdecuacion);
 		

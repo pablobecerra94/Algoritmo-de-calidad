@@ -44,7 +44,7 @@ public class ReporteFinalView extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblCalificacin = new JLabel("Calificación");
-		lblCalificacin.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblCalificacin.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblCalificacin.setBounds(130, 11, 160, 48);
 		contentPane.add(lblCalificacin);
 		

@@ -100,7 +100,7 @@ public class UtilizacionDeRecursosView extends JFrame {
 		contentPane.add(textArea);
 		
 		JLabel lblFiabilidad = new JLabel("Utilización de los Recursos");
-		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblFiabilidad.setBounds(126, 11, 160, 48);
 		contentPane.add(lblFiabilidad);
 	}

@@ -97,8 +97,8 @@ public class ToleranciaAFallos extends JFrame {
 		textArea.setBounds(219, 80, 142, 109);
 		contentPane.add(textArea);
 		
-		JLabel lblFiabilidad = new JLabel("Utilizacion de los recursos");
-		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		JLabel lblFiabilidad = new JLabel("Tolerancia a fallos");
+		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblFiabilidad.setBounds(126, 11, 160, 48);
 		contentPane.add(lblFiabilidad);
 	}

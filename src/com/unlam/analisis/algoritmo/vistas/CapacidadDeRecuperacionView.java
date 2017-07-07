@@ -100,7 +100,7 @@ public class CapacidadDeRecuperacionView extends JFrame {
 		contentPane.add(textArea);
 		
 		JLabel lblFiabilidad = new JLabel("Capacidad de Recuperación");
-		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblFiabilidad.setBounds(126, 11, 160, 48);
 		contentPane.add(lblFiabilidad);
 	}

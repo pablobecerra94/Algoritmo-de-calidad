@@ -73,7 +73,7 @@ public class SeguridadDeAccesoView extends JFrame {
 		contentPane.add(rdbtnRegular);
 
 		JLabel lblFuncionalidad = new JLabel("Seguridad");
-		lblFuncionalidad.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblFuncionalidad.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblFuncionalidad.setBounds(121, 11, 173, 48);
 		contentPane.add(lblFuncionalidad);
 

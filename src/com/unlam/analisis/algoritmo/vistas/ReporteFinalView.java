@@ -18,12 +18,12 @@ public class ReporteFinalView extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private FiabilidadView fiabilidad;
-	private MantenibilidadView mantenibilidad;
-	private PortabilidadView portabilidad;
-	private UsabilidadView usabilidad;
-	private FuncionalidadView funcionalidad;
-	private EficienciaView eficiencia;
+	private AdecuacionView fiabilidad;
+	private UtilizacionDeRecursosView mantenibilidad;
+	private CapacidadDeRecuperacionView portabilidad;
+	private ComportamientoTemporalView usabilidad;
+	private SeguridadDeAccesoView funcionalidad;
+	private ExactitudView eficiencia;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -136,8 +136,8 @@ public class ReporteFinalView extends JFrame {
 		portabilidad.setVisible(true);	
 	}
 
-	public void setViews(FiabilidadView fiabilidad2, MantenibilidadView mantenibilidad2, PortabilidadView portabilidad2,
-			UsabilidadView usabilidad2, EficienciaView eficiencia2, FuncionalidadView funcionalidad2) {
+	public void setViews(AdecuacionView fiabilidad2, UtilizacionDeRecursosView mantenibilidad2, CapacidadDeRecuperacionView portabilidad2,
+			ComportamientoTemporalView usabilidad2, ExactitudView eficiencia2, SeguridadDeAccesoView funcionalidad2) {
 		this.funcionalidad = funcionalidad2;
 		this.eficiencia = eficiencia2;
 		this.usabilidad = usabilidad2;
@@ -150,4 +150,6 @@ public class ReporteFinalView extends JFrame {
 		// TODO hacer calculo.
 		
 	}
+
+	
 }

@@ -15,7 +15,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 
-public class FuncionalidadView extends JFrame {
+public class SeguridadDeAccesoView extends JFrame {
 
 	/**
 	 * 
@@ -24,12 +24,13 @@ public class FuncionalidadView extends JFrame {
 	private JPanel contentPane;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private String opcionElegida;
-	EficienciaView eficiencia;
+	ExactitudView exactitud;
+	private boolean ponderada=true;
 
 	/**
 	 * Create the frame.
 	 */
-	public FuncionalidadView() {
+	public SeguridadDeAccesoView() {
 		setTitle("Algoritmo de calidad");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -71,16 +72,16 @@ public class FuncionalidadView extends JFrame {
 		rdbtnRegular.setBounds(44, 119, 109, 23);
 		contentPane.add(rdbtnRegular);
 
-		JLabel lblFuncionalidad = new JLabel("Funcionalidad");
+		JLabel lblFuncionalidad = new JLabel("Seguridad");
 		lblFuncionalidad.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblFuncionalidad.setBounds(115, 9, 208, 48);
+		lblFuncionalidad.setBounds(121, 11, 173, 48);
 		contentPane.add(lblFuncionalidad);
 
 		JTextArea txtrExplicacion = new JTextArea();
 		txtrExplicacion.setBackground(Color.LIGHT_GRAY);
-		txtrExplicacion.setText("Explicacion");
+		txtrExplicacion.setText("Integridad y confidencialidad \nde los  datos");
 		txtrExplicacion.setEditable(false);
-		txtrExplicacion.setBounds(216, 78, 142, 109);
+		txtrExplicacion.setBounds(216, 76, 191, 109);
 		contentPane.add(txtrExplicacion);
 
 		JButton btnSiguiente = new JButton("Siguiente");
@@ -106,7 +107,7 @@ public class FuncionalidadView extends JFrame {
 	protected void mostrarSiguiente() {
 		if(buttonGroup.getSelection()!=null){			
 			this.setVisible(false);
-			eficiencia.setVisible(true);
+			exactitud.setVisible(true);
 		}
 		else{
 			JOptionPane.showMessageDialog(null, "Error! Debe seleccionar una opción","Error",JOptionPane.ERROR_MESSAGE);
@@ -131,7 +132,15 @@ public class FuncionalidadView extends JFrame {
 		this.opcionElegida = opcionElegida;
 	}
 
-	public void setViews(EficienciaView eficiencia2) {
-		this.eficiencia=eficiencia2;		
+	public void setViews(ExactitudView eficiencia2) {
+		this.exactitud=eficiencia2;		
+	}
+
+	public boolean isPonderada() {
+		return ponderada;
+	}
+
+	public void setPonderada(boolean ponderada) {
+		this.ponderada = ponderada;
 	}
 }

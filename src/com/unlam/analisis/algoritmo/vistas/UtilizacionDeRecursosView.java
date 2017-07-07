@@ -15,24 +15,24 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 
-public class UsabilidadView extends JFrame {
+public class UtilizacionDeRecursosView extends JFrame {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private MantenibilidadView mantenibilidad;
-	private PortabilidadView portabilidad;
+	private AdecuacionView fiabilidad;
+	private ComportamientoTemporalView usabilidad;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private String opcionElegida;
-
+	private boolean ponderada=true;
 
 
 	/**
 	 * Create the frame.
 	 */
-	public UsabilidadView() {
+	public UtilizacionDeRecursosView() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -99,23 +99,17 @@ public class UsabilidadView extends JFrame {
 		textArea.setBounds(219, 80, 142, 109);
 		contentPane.add(textArea);
 		
-		JLabel lblFiabilidad = new JLabel("Usabilidad");
+		JLabel lblFiabilidad = new JLabel("Utilización de los Recursos");
 		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblFiabilidad.setBounds(126, 11, 160, 48);
 		contentPane.add(lblFiabilidad);
 	}
 
 
-
-	public void setViews(MantenibilidadView mantenibilidad2, PortabilidadView portabilidad2) {
-		this.mantenibilidad=mantenibilidad2;
-		this.portabilidad=portabilidad2;	
-	}
-	
 	protected void abrirSiguiente() {
 		if(buttonGroup.getSelection()!=null){			
 			this.setVisible(false);
-			portabilidad.setVisible(true);
+			usabilidad.setVisible(true);
 		}
 		else{
 			JOptionPane.showMessageDialog(null, "Error! Debe seleccionar una opción","Error",JOptionPane.ERROR_MESSAGE);
@@ -133,7 +127,13 @@ public class UsabilidadView extends JFrame {
 
 	protected void abrirAnterior() {
 		this.setVisible(false);
-		mantenibilidad.setVisible(true);
+		fiabilidad.setVisible(true);
+		
+	}
+
+	public void setViews(AdecuacionView fiabilidad2, ComportamientoTemporalView usabilidad2) {
+		this.fiabilidad=fiabilidad2;
+		this.usabilidad=usabilidad2;
 		
 	}
 	
@@ -145,6 +145,16 @@ public class UsabilidadView extends JFrame {
 
 	public void setOpcionElegida(String opcionElegida) {
 		this.opcionElegida = opcionElegida;
+	}
+
+
+	public boolean isPonderada() {
+		return ponderada;
+	}
+
+
+	public void setPonderada(boolean ponderada) {
+		this.ponderada = ponderada;
 	}
 
 }

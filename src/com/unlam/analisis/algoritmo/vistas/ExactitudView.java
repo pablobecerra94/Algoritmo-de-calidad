@@ -15,24 +15,26 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 
-public class PortabilidadView extends JFrame {
+public class ExactitudView extends JFrame {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private UsabilidadView usabilidad;
-	private ReporteFinalView reporte;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private SeguridadDeAccesoView seguridad;
+	private AdecuacionView fiabilidad;
 	private String opcionElegida;
+	private boolean ponderada=false;
 
-	
 
 	/**
 	 * Create the frame.
+	 * @param fiabilidad 
+	 * @param seguridad 
 	 */
-	public PortabilidadView() {
+	public ExactitudView() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -40,27 +42,31 @@ public class PortabilidadView extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		JLabel lblAdecuacion = new JLabel("Exactitud");
+		lblAdecuacion.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblAdecuacion.setBounds(134, 11, 160, 48);
+		contentPane.add(lblAdecuacion);
+		
 		JRadioButton radioButton = new JRadioButton("Bueno");
+		radioButton.setActionCommand("Bueno");
 		radioButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				seleccionar();
 			}
 		});
 		buttonGroup.add(radioButton);
-		radioButton.setActionCommand("Bueno");
-		radioButton.setBounds(47, 95, 109, 23);
+		radioButton.setBounds(55, 95, 109, 23);
 		contentPane.add(radioButton);
 		
 		JRadioButton radioButton_1 = new JRadioButton("Regular");
 		radioButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				seleccionar();
-
 			}
 		});
-		buttonGroup.add(radioButton_1);
 		radioButton_1.setActionCommand("Regular");
-		radioButton_1.setBounds(47, 121, 109, 23);
+		buttonGroup.add(radioButton_1);
+		radioButton_1.setBounds(55, 121, 109, 23);
 		contentPane.add(radioButton_1);
 		
 		JRadioButton radioButton_2 = new JRadioButton("Malo");
@@ -69,82 +75,76 @@ public class PortabilidadView extends JFrame {
 				seleccionar();
 			}
 		});
-		buttonGroup.add(radioButton_2);
 		radioButton_2.setActionCommand("Malo");
-		radioButton_2.setBounds(47, 147, 109, 23);
+		buttonGroup.add(radioButton_2);
+		radioButton_2.setBounds(55, 147, 109, 23);
 		contentPane.add(radioButton_2);
 		
-		JButton button = new JButton("Atras");
-		button.addActionListener(new ActionListener() {
+		JButton btnAtras = new JButton("Atras");
+		btnAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				abrirAnterior();
+				abrirFuncionalidad();
 			}
 		});
-		button.setBounds(59, 214, 89, 23);
-		contentPane.add(button);
+		btnAtras.setBounds(67, 214, 89, 23);
+		contentPane.add(btnAtras);
 		
-		JButton btnFinalizar = new JButton("Finalizar");
-		btnFinalizar.addActionListener(new ActionListener() {
+		JButton button_1 = new JButton("Siguiente");
+		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				abrirSiguiente();
 			}
 		});
-		btnFinalizar.setBounds(272, 214, 89, 23);
-		contentPane.add(btnFinalizar);
+		button_1.setBounds(280, 214, 89, 23);
+		contentPane.add(button_1);
 		
 		JTextArea textArea = new JTextArea();
 		textArea.setText("Explicacion");
 		textArea.setEditable(false);
 		textArea.setBackground(Color.LIGHT_GRAY);
-		textArea.setBounds(219, 80, 142, 109);
+		textArea.setBounds(227, 80, 142, 109);
 		contentPane.add(textArea);
-		
-		JLabel lblFiabilidad = new JLabel("Portabilidad");
-		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblFiabilidad.setBounds(126, 11, 160, 48);
-		contentPane.add(lblFiabilidad);
 	}
 
-
-
-	public void setViews(UsabilidadView usabilidad2, ReporteFinalView reporte2) {
-		this.usabilidad=usabilidad2;
-		this.reporte=reporte2;
-		
-	}
-	
 	protected void abrirSiguiente() {
 		if(buttonGroup.getSelection()!=null){			
 			this.setVisible(false);
-			reporte.calcular();
-			reporte.setVisible(true);
+			fiabilidad.setVisible(true);
 		}
 		else{
 			JOptionPane.showMessageDialog(null, "Error! Debe seleccionar una opción","Error",JOptionPane.ERROR_MESSAGE);
-		}			
+		}		
 	}
-
 
 	protected void seleccionar() {
 		setOpcionElegida(buttonGroup.getSelection().getActionCommand());
-	}
-
-
-
-	protected void abrirAnterior() {
-		this.setVisible(false);
-		usabilidad.setVisible(true);
 		
 	}
+
+	protected void abrirFuncionalidad() {
+		this.setVisible(false);
+		seguridad.setVisible(true);
+	}
 	
+	public void setViews(SeguridadDeAccesoView seguridad,AdecuacionView fiabilidad){
+		this.seguridad=seguridad;
+		this.fiabilidad=fiabilidad;
+	}
+
 	public String getOpcionElegida() {
 		return opcionElegida;
 	}
 
-
-
 	public void setOpcionElegida(String opcionElegida) {
 		this.opcionElegida = opcionElegida;
+	}
+
+	public boolean isPonderada() {
+		return ponderada;
+	}
+
+	public void setPonderada(boolean ponderada) {
+		this.ponderada = ponderada;
 	}
 
 }

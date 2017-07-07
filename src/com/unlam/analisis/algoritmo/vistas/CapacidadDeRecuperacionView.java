@@ -15,24 +15,24 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 
-public class MantenibilidadView extends JFrame {
+public class CapacidadDeRecuperacionView extends JFrame {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private FiabilidadView fiabilidad;
-	private UsabilidadView usabilidad;
+	private ComportamientoTemporalView usabilidad;
+	private ReporteFinalView reporte;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private String opcionElegida;
-
-
+	private boolean ponderada=false;
+	
 
 	/**
 	 * Create the frame.
 	 */
-	public MantenibilidadView() {
+	public CapacidadDeRecuperacionView() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -83,14 +83,14 @@ public class MantenibilidadView extends JFrame {
 		button.setBounds(59, 214, 89, 23);
 		contentPane.add(button);
 		
-		JButton button_1 = new JButton("Siguiente");
-		button_1.addActionListener(new ActionListener() {
+		JButton btnFinalizar = new JButton("Finalizar");
+		btnFinalizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				abrirSiguiente();
 			}
 		});
-		button_1.setBounds(272, 214, 89, 23);
-		contentPane.add(button_1);
+		btnFinalizar.setBounds(272, 214, 89, 23);
+		contentPane.add(btnFinalizar);
 		
 		JTextArea textArea = new JTextArea();
 		textArea.setText("Explicacion");
@@ -99,24 +99,30 @@ public class MantenibilidadView extends JFrame {
 		textArea.setBounds(219, 80, 142, 109);
 		contentPane.add(textArea);
 		
-		JLabel lblFiabilidad = new JLabel("Mantenibilidad");
+		JLabel lblFiabilidad = new JLabel("Capacidad de Recuperación");
 		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblFiabilidad.setBounds(126, 11, 160, 48);
 		contentPane.add(lblFiabilidad);
 	}
 
 
+
+	public void setViews(ComportamientoTemporalView usabilidad2, ReporteFinalView reporte2) {
+		this.usabilidad=usabilidad2;
+		this.reporte=reporte2;
+		
+	}
+	
 	protected void abrirSiguiente() {
 		if(buttonGroup.getSelection()!=null){			
 			this.setVisible(false);
-			usabilidad.setVisible(true);
+			reporte.calcular();
+			reporte.setVisible(true);
 		}
 		else{
 			JOptionPane.showMessageDialog(null, "Error! Debe seleccionar una opción","Error",JOptionPane.ERROR_MESSAGE);
-		}		
-		
+		}			
 	}
-
 
 
 	protected void seleccionar() {
@@ -127,13 +133,7 @@ public class MantenibilidadView extends JFrame {
 
 	protected void abrirAnterior() {
 		this.setVisible(false);
-		fiabilidad.setVisible(true);
-		
-	}
-
-	public void setViews(FiabilidadView fiabilidad2, UsabilidadView usabilidad2) {
-		this.fiabilidad=fiabilidad2;
-		this.usabilidad=usabilidad2;
+		usabilidad.setVisible(true);
 		
 	}
 	
@@ -145,6 +145,18 @@ public class MantenibilidadView extends JFrame {
 
 	public void setOpcionElegida(String opcionElegida) {
 		this.opcionElegida = opcionElegida;
+	}
+
+
+
+	public boolean isPonderada() {
+		return ponderada;
+	}
+
+
+
+	public void setPonderada(boolean ponderada) {
+		this.ponderada = ponderada;
 	}
 
 }

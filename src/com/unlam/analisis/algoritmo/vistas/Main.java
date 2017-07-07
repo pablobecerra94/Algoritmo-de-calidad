@@ -18,13 +18,13 @@ public class Main extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private FiabilidadView fiabilidad=new FiabilidadView();
-	private MantenibilidadView mantenibilidad=new MantenibilidadView();
-	private PortabilidadView portabilidad = new PortabilidadView();
-	private UsabilidadView usabilidad = new UsabilidadView();
+	private AdecuacionView fiabilidad=new AdecuacionView();
+	private UtilizacionDeRecursosView mantenibilidad=new UtilizacionDeRecursosView();
+	private CapacidadDeRecuperacionView portabilidad = new CapacidadDeRecuperacionView();
+	private ComportamientoTemporalView usabilidad = new ComportamientoTemporalView();
 	
-	private EficienciaView eficiencia =new EficienciaView();
-	private FuncionalidadView funcionalidad= new FuncionalidadView();
+	private ExactitudView eficiencia =new ExactitudView();
+	private SeguridadDeAccesoView funcionalidad= new SeguridadDeAccesoView();
 	private ReporteFinalView reporte= new ReporteFinalView();	
 
 	/**
@@ -47,7 +47,7 @@ public class Main extends JFrame {
 	 * Create the frame.
 	 */
 	public Main() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -78,6 +78,7 @@ public class Main extends JFrame {
 		 eficiencia.setViews(funcionalidad,fiabilidad);
 		 reporte.setViews(fiabilidad,mantenibilidad,portabilidad,usabilidad,eficiencia,funcionalidad);
 		 funcionalidad.setVisible(true);
+		 this.dispose();
 		
 	}
 

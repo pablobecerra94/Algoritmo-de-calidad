@@ -15,15 +15,15 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 
-public class FiabilidadView extends JFrame {
+public class AdecuacionView extends JFrame {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private EficienciaView eficiencia;
-	private MantenibilidadView mantenibilidad;
+	private ExactitudView eficiencia;
+	private UtilizacionDeRecursosView mantenibilidad;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private String opcionElegida;
 
@@ -31,7 +31,7 @@ public class FiabilidadView extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public FiabilidadView() {
+	public AdecuacionView() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -98,7 +98,7 @@ public class FiabilidadView extends JFrame {
 		textArea.setBounds(219, 80, 142, 109);
 		contentPane.add(textArea);
 		
-		JLabel lblFiabilidad = new JLabel("Fiabilidad");
+		JLabel lblFiabilidad = new JLabel("Adecuación");
 		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblFiabilidad.setBounds(126, 11, 160, 48);
 		contentPane.add(lblFiabilidad);
@@ -133,7 +133,7 @@ public class FiabilidadView extends JFrame {
 
 
 
-	public void setViews(EficienciaView eficiencia, MantenibilidadView mantenibilidad) {
+	public void setViews(ExactitudView eficiencia, UtilizacionDeRecursosView mantenibilidad) {
 		this.eficiencia=eficiencia;
 		this.mantenibilidad=mantenibilidad;		
 	}

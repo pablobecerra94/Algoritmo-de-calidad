@@ -23,7 +23,7 @@ public class CapacidadDeRecuperacionView extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private ComportamientoTemporalView usabilidad;
-	private ReporteFinalView reporte;
+	private ToleranciaAFallos reporte;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private String opcionElegida;
 	private boolean ponderada=false;
@@ -107,7 +107,7 @@ public class CapacidadDeRecuperacionView extends JFrame {
 
 
 
-	public void setViews(ComportamientoTemporalView usabilidad2, ReporteFinalView reporte2) {
+	public void setViews(ComportamientoTemporalView usabilidad2, ToleranciaAFallos reporte2) {
 		this.usabilidad=usabilidad2;
 		this.reporte=reporte2;
 		
@@ -116,7 +116,6 @@ public class CapacidadDeRecuperacionView extends JFrame {
 	protected void abrirSiguiente() {
 		if(buttonGroup.getSelection()!=null){			
 			this.setVisible(false);
-			reporte.calcular();
 			reporte.setVisible(true);
 		}
 		else{

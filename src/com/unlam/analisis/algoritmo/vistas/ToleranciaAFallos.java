@@ -15,24 +15,22 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 
-public class AdecuacionView extends JFrame {
+public class ToleranciaAFallos extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private ExactitudView eficiencia;
-	private UtilizacionDeRecursosView mantenibilidad;
+	private ComportamientoTemporalView comportamiento;
+	private ReporteFinalView reporte;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private String opcionElegida;
-	private boolean ponderada=false;
+	private boolean ponderada=true;
+
 
 
 	/**
 	 * Create the frame.
 	 */
-	public AdecuacionView() {
+	public ToleranciaAFallos() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -83,14 +81,14 @@ public class AdecuacionView extends JFrame {
 		button.setBounds(59, 214, 89, 23);
 		contentPane.add(button);
 		
-		JButton button_1 = new JButton("Siguiente");
-		button_1.addActionListener(new ActionListener() {
+		JButton btnFinalizar = new JButton("Finalizar");
+		btnFinalizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				abrirSiguiente();
 			}
 		});
-		button_1.setBounds(272, 214, 89, 23);
-		contentPane.add(button_1);
+		btnFinalizar.setBounds(272, 214, 89, 23);
+		contentPane.add(btnFinalizar);
 		
 		JTextArea textArea = new JTextArea();
 		textArea.setText("Explicacion");
@@ -99,25 +97,28 @@ public class AdecuacionView extends JFrame {
 		textArea.setBounds(219, 80, 142, 109);
 		contentPane.add(textArea);
 		
-		JLabel lblFiabilidad = new JLabel("Adecuación");
+		JLabel lblFiabilidad = new JLabel("Utilizacion de los recursos");
 		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblFiabilidad.setBounds(126, 11, 160, 48);
 		contentPane.add(lblFiabilidad);
 	}
-
-
-
+	
+	public void setViews(ComportamientoTemporalView usabilidad2, ReporteFinalView reporte2) {
+		this.comportamiento=usabilidad2;
+		this.reporte=reporte2;
+		
+	}
+	
 	protected void abrirSiguiente() {
 		if(buttonGroup.getSelection()!=null){			
 			this.setVisible(false);
-			mantenibilidad.setVisible(true);
+			reporte.calcular();
+			reporte.setVisible(true);
 		}
 		else{
 			JOptionPane.showMessageDialog(null, "Error! Debe seleccionar una opción","Error",JOptionPane.ERROR_MESSAGE);
-		}		
-		
+		}			
 	}
-
 
 
 	protected void seleccionar() {
@@ -128,19 +129,10 @@ public class AdecuacionView extends JFrame {
 
 	protected void abrirAnterior() {
 		this.setVisible(false);
-		eficiencia.setVisible(true);
+		comportamiento.setVisible(true);
 		
 	}
-
-
-
-	public void setViews(ExactitudView eficiencia, UtilizacionDeRecursosView mantenibilidad) {
-		this.eficiencia=eficiencia;
-		this.mantenibilidad=mantenibilidad;		
-	}
-
-
-
+	
 	public String getOpcionElegida() {
 		return opcionElegida;
 	}

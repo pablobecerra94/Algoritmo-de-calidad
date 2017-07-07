@@ -22,7 +22,7 @@ public class Main extends JFrame {
 	private UtilizacionDeRecursosView mantenibilidad=new UtilizacionDeRecursosView();
 	private CapacidadDeRecuperacionView portabilidad = new CapacidadDeRecuperacionView();
 	private ComportamientoTemporalView usabilidad = new ComportamientoTemporalView();
-	
+	private ToleranciaAFallos utilizacion= new ToleranciaAFallos();
 	private ExactitudView eficiencia =new ExactitudView();
 	private SeguridadDeAccesoView funcionalidad= new SeguridadDeAccesoView();
 	private ReporteFinalView reporte= new ReporteFinalView();	
@@ -72,10 +72,11 @@ public class Main extends JFrame {
 	protected void comenzar() {
 		 fiabilidad.setViews(eficiencia,mantenibilidad);
 		 mantenibilidad.setViews(fiabilidad,usabilidad);
-		 portabilidad.setViews(usabilidad,reporte);
+		 portabilidad.setViews(usabilidad,utilizacion);
 		 usabilidad.setViews(mantenibilidad,portabilidad);
 		 funcionalidad.setViews(eficiencia);
 		 eficiencia.setViews(funcionalidad,fiabilidad);
+		 utilizacion.setViews(usabilidad, reporte);
 		 reporte.setViews(fiabilidad,mantenibilidad,portabilidad,usabilidad,eficiencia,funcionalidad);
 		 funcionalidad.setVisible(true);
 		 this.dispose();

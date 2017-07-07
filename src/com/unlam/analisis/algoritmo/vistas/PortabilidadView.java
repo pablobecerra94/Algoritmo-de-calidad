@@ -116,6 +116,7 @@ public class PortabilidadView extends JFrame {
 	protected void abrirSiguiente() {
 		if(buttonGroup.getSelection()!=null){			
 			this.setVisible(false);
+			reporte.calcular();
 			reporte.setVisible(true);
 		}
 		else{

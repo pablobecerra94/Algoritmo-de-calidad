@@ -18,12 +18,21 @@ public class ReporteFinalView extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private AdecuacionView fiabilidad;
-	private UtilizacionDeRecursosView mantenibilidad;
-	private CapacidadDeRecuperacionView portabilidad;
-	private ComportamientoTemporalView usabilidad;
-	private SeguridadDeAccesoView funcionalidad;
-	private ExactitudView eficiencia;
+	private SeguridadDeAccesoView seguridad= new SeguridadDeAccesoView();
+	private ExactitudView exactitud =new ExactitudView();
+	private AdecuacionView adecuacion=new AdecuacionView();
+	private UtilizacionDeRecursosView utilizacionRecursos=new UtilizacionDeRecursosView();
+	private ComportamientoTemporalView comportamientoTemporal = new ComportamientoTemporalView();
+	private CapacidadDeRecuperacionView capacidadDeRecuperacion = new CapacidadDeRecuperacionView();
+	private ToleranciaAFallos toleranciaAFallos= new ToleranciaAFallos();
+	private CapacidadDeSerAnalizadoView capacidadDeSerAnalizado = new CapacidadDeSerAnalizadoView();
+	private CapacidadDeSerModificadoView modificado = new CapacidadDeSerModificadoView();
+	private Estabilidad estabilidad = new Estabilidad();
+	private CapacidadDeSerEntendido capacidadDeSerEntendido = new CapacidadDeSerEntendido();
+	private CapacidadDeSerOperado capacidadDeSerOperado = new CapacidadDeSerOperado();
+	private CapacidadParaSerAtractivo capacidadParaSerAtractivo = new CapacidadParaSerAtractivo();
+	private Adaptabilidad adaptabilidad = new Adaptabilidad();
+	private Instalabilidad instalabilidad = new Instalabilidad();
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -133,21 +142,40 @@ public class ReporteFinalView extends JFrame {
 
 	protected void anterior() {
 		this.setVisible(false);
-		portabilidad.setVisible(true);	
+		this.instalabilidad.setVisible(true);
 	}
 
-	public void setViews(AdecuacionView fiabilidad2, UtilizacionDeRecursosView mantenibilidad2, CapacidadDeRecuperacionView portabilidad2,
-			ComportamientoTemporalView usabilidad2, ExactitudView eficiencia2, SeguridadDeAccesoView funcionalidad2) {
-		this.funcionalidad = funcionalidad2;
-		this.eficiencia = eficiencia2;
-		this.usabilidad = usabilidad2;
-		this.portabilidad = portabilidad2;
-		this.mantenibilidad = mantenibilidad2;
-		this.fiabilidad = fiabilidad2;
-	}
+
 
 	public void calcular() {
 		// TODO hacer calculo.
+		
+	}
+
+	public void setViews(SeguridadDeAccesoView seguridad, ExactitudView exactitud, AdecuacionView adecuacion,
+			UtilizacionDeRecursosView utilizacionRecursos, ComportamientoTemporalView comportamientoTemporal,
+			CapacidadDeRecuperacionView capacidadDeRecuperacion, ToleranciaAFallos toleranciaAFallos,
+			CapacidadDeSerAnalizadoView capacidadDeSerAnalizado, CapacidadDeSerModificadoView modificado,
+			Estabilidad estabilidad, CapacidadDeSerEntendido capacidadDeSerEntendido,
+			CapacidadDeSerOperado capacidadDeSerOperado, CapacidadParaSerAtractivo capacidadParaSerAtractivo,
+			Adaptabilidad adaptabilidad, Instalabilidad instalabilidad) {
+		
+		this.seguridad=seguridad;
+		this.exactitud=exactitud;
+		this.adecuacion=adecuacion;
+		this.utilizacionRecursos=utilizacionRecursos;
+		this.comportamientoTemporal=comportamientoTemporal;
+		this.capacidadDeRecuperacion=capacidadDeRecuperacion;
+		this.toleranciaAFallos=toleranciaAFallos;
+		this.capacidadDeSerAnalizado=capacidadDeSerAnalizado;
+		this.modificado=modificado;
+		this.estabilidad=estabilidad;
+		this.capacidadDeSerEntendido=capacidadDeSerEntendido;
+		this.capacidadDeSerOperado=capacidadDeSerOperado;
+		this.capacidadParaSerAtractivo=capacidadParaSerAtractivo;
+		this.adaptabilidad=adaptabilidad;
+		this.instalabilidad=instalabilidad;
+		
 		
 	}
 

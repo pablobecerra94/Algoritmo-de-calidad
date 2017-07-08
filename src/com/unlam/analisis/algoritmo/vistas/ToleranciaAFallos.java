@@ -19,8 +19,8 @@ public class ToleranciaAFallos extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private ComportamientoTemporalView comportamiento;
-	private ReporteFinalView reporte;
+	private CapacidadDeRecuperacionView comportamiento;
+	private CapacidadDeSerAnalizadoView reporte;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private String opcionElegida;
 	private boolean ponderada=true;
@@ -103,16 +103,15 @@ public class ToleranciaAFallos extends JFrame {
 		contentPane.add(lblFiabilidad);
 	}
 	
-	public void setViews(ComportamientoTemporalView usabilidad2, ReporteFinalView reporte2) {
-		this.comportamiento=usabilidad2;
-		this.reporte=reporte2;
+	public void setViews(CapacidadDeRecuperacionView capacidadDeRecuperacion, CapacidadDeSerAnalizadoView capacidadDeSerAnalizado) {
+		this.comportamiento=capacidadDeRecuperacion;
+		this.reporte=capacidadDeSerAnalizado;
 		
 	}
 	
 	protected void abrirSiguiente() {
 		if(buttonGroup.getSelection()!=null){			
 			this.setVisible(false);
-			reporte.calcular();
 			reporte.setVisible(true);
 		}
 		else{

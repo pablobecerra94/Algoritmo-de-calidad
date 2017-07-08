@@ -1,8 +1,6 @@
 package com.unlam.analisis.algoritmo.vistas;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,9 +17,10 @@ import javax.swing.border.EmptyBorder;
 
 public class CapacidadDeSerAnalizadoView extends JFrame {
 
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private ToleranciaAFallos usabilidad;
-	private ReporteFinalView reporte;
+	private CapacidadDeSerModificadoView reporte;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private String opcionElegida;
 	private boolean ponderada=false;
@@ -97,7 +96,7 @@ public class CapacidadDeSerAnalizadoView extends JFrame {
 		textArea.setBounds(219, 80, 142, 109);
 		contentPane.add(textArea);
 		
-		JLabel lblFiabilidad = new JLabel("Capacidad de Recuperación");
+		JLabel lblFiabilidad = new JLabel("Capacidad de ser Analizado");
 		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblFiabilidad.setBounds(126, 11, 160, 48);
 		contentPane.add(lblFiabilidad);
@@ -105,9 +104,9 @@ public class CapacidadDeSerAnalizadoView extends JFrame {
 
 
 
-	public void setViews(ToleranciaAFallos usabilidad2, ReporteFinalView reporte2) {
+	public void setViews(ToleranciaAFallos usabilidad2, CapacidadDeSerModificadoView modificado) {
 		this.usabilidad=usabilidad2;
-		this.reporte=reporte2;
+		this.reporte=modificado;
 		
 	}
 	

@@ -18,8 +18,8 @@ import javax.swing.border.EmptyBorder;
 public class Estabilidad extends JFrame {
 
 	private JPanel contentPane;
-	private ToleranciaAFallos usabilidad;
-	private ReporteFinalView reporte;
+	private CapacidadDeSerModificadoView usabilidad;
+	private CapacidadDeSerEntendido reporte;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private String opcionElegida;
 	private boolean ponderada=true;
@@ -103,9 +103,9 @@ public class Estabilidad extends JFrame {
 
 
 
-	public void setViews(ToleranciaAFallos usabilidad2, ReporteFinalView reporte2) {
-		this.usabilidad=usabilidad2;
-		this.reporte=reporte2;
+	public void setViews(CapacidadDeSerModificadoView modificado, CapacidadDeSerEntendido capacidadDeSerEntendido) {
+		this.usabilidad=modificado;
+		this.reporte=capacidadDeSerEntendido;
 		
 	}
 	

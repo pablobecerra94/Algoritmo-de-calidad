@@ -18,13 +18,21 @@ public class Main extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private AdecuacionView fiabilidad=new AdecuacionView();
-	private UtilizacionDeRecursosView mantenibilidad=new UtilizacionDeRecursosView();
-	private CapacidadDeRecuperacionView portabilidad = new CapacidadDeRecuperacionView();
-	private ComportamientoTemporalView usabilidad = new ComportamientoTemporalView();
-	private ToleranciaAFallos utilizacion= new ToleranciaAFallos();
-	private ExactitudView eficiencia =new ExactitudView();
-	private SeguridadDeAccesoView funcionalidad= new SeguridadDeAccesoView();
+	private SeguridadDeAccesoView seguridad= new SeguridadDeAccesoView();
+	private ExactitudView exactitud =new ExactitudView();
+	private AdecuacionView adecuacion=new AdecuacionView();
+	private UtilizacionDeRecursosView utilizacionRecursos=new UtilizacionDeRecursosView();
+	private ComportamientoTemporalView comportamientoTemporal = new ComportamientoTemporalView();
+	private CapacidadDeRecuperacionView capacidadDeRecuperacion = new CapacidadDeRecuperacionView();
+	private ToleranciaAFallos toleranciaAFallos= new ToleranciaAFallos();
+	private CapacidadDeSerAnalizadoView capacidadDeSerAnalizado = new CapacidadDeSerAnalizadoView();
+	private CapacidadDeSerModificadoView modificado = new CapacidadDeSerModificadoView();
+	private Estabilidad estabilidad = new Estabilidad();
+	private CapacidadDeSerEntendido capacidadDeSerEntendido = new CapacidadDeSerEntendido();
+	private CapacidadDeSerOperado capacidadDeSerOperado = new CapacidadDeSerOperado();
+	private CapacidadParaSerAtractivo capacidadParaSerAtractivo = new CapacidadParaSerAtractivo();
+	private Adaptabilidad adaptabilidad = new Adaptabilidad();
+	private Instalabilidad instalabilidad = new Instalabilidad();
 	private ReporteFinalView reporte= new ReporteFinalView();	
 
 	/**
@@ -70,15 +78,26 @@ public class Main extends JFrame {
 	}
 
 	protected void comenzar() {
-		 fiabilidad.setViews(eficiencia,mantenibilidad);
-		 mantenibilidad.setViews(fiabilidad,usabilidad);
-		 portabilidad.setViews(usabilidad,utilizacion);
-		 usabilidad.setViews(mantenibilidad,portabilidad);
-		 funcionalidad.setViews(eficiencia);
-		 eficiencia.setViews(funcionalidad,fiabilidad);
-		 utilizacion.setViews(usabilidad, reporte);
-		 reporte.setViews(fiabilidad,mantenibilidad,portabilidad,usabilidad,eficiencia,funcionalidad);
-		 funcionalidad.setVisible(true);
+		 seguridad.setViews(exactitud);
+		 exactitud.setViews(seguridad,adecuacion);
+		 adecuacion.setViews(exactitud,utilizacionRecursos);
+		 utilizacionRecursos.setViews(adecuacion,comportamientoTemporal);
+		 comportamientoTemporal.setViews(utilizacionRecursos,capacidadDeRecuperacion);
+		 capacidadDeRecuperacion.setViews(comportamientoTemporal,toleranciaAFallos);
+		 toleranciaAFallos.setViews(capacidadDeRecuperacion,capacidadDeSerAnalizado);
+		 capacidadDeSerAnalizado.setViews(toleranciaAFallos, modificado);
+		 modificado.setViews(capacidadDeSerAnalizado, estabilidad);
+		 estabilidad.setViews(modificado, capacidadDeSerEntendido);
+		 capacidadDeSerEntendido.setViews(estabilidad, capacidadDeSerOperado);
+		 capacidadDeSerOperado.setViews(capacidadDeSerEntendido, capacidadParaSerAtractivo);
+		 capacidadParaSerAtractivo.setViews(capacidadDeSerOperado, adaptabilidad);
+		 adaptabilidad.setViews(capacidadParaSerAtractivo, instalabilidad);
+		 instalabilidad.setViews(adaptabilidad, reporte);
+		 
+		 reporte.setViews(seguridad,exactitud,adecuacion,utilizacionRecursos,
+				 comportamientoTemporal,capacidadDeRecuperacion,toleranciaAFallos,capacidadDeSerAnalizado,modificado,
+				 estabilidad,capacidadDeSerEntendido,capacidadDeSerOperado,capacidadParaSerAtractivo,adaptabilidad,instalabilidad);
+		 seguridad.setVisible(true);
 		 this.dispose();
 		
 	}

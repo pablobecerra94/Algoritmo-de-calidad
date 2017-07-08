@@ -21,8 +21,8 @@ public class Adaptabilidad extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private AdecuacionView fiabilidad;
-	private ComportamientoTemporalView usabilidad;
+	private CapacidadParaSerAtractivo fiabilidad;
+	private Instalabilidad usabilidad;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private String opcionElegida;
 	private boolean ponderada=true;
@@ -128,9 +128,9 @@ public class Adaptabilidad extends JFrame {
 		
 	}
 
-	public void setViews(AdecuacionView fiabilidad2, ComportamientoTemporalView usabilidad2) {
-		this.fiabilidad=fiabilidad2;
-		this.usabilidad=usabilidad2;
+	public void setViews(CapacidadParaSerAtractivo capacidadParaSerAtractivo, Instalabilidad instalabilidad) {
+		this.fiabilidad=capacidadParaSerAtractivo;
+		this.usabilidad=instalabilidad;
 		
 	}
 	

@@ -19,8 +19,8 @@ import javax.swing.border.EmptyBorder;
 public class CapacidadDeSerModificadoView extends JFrame {
 
 	private JPanel contentPane;
-	private ToleranciaAFallos usabilidad;
-	private ReporteFinalView reporte;
+	private CapacidadDeSerAnalizadoView usabilidad;
+	private Estabilidad reporte;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private String opcionElegida;
 	private boolean ponderada=false;
@@ -104,9 +104,9 @@ public class CapacidadDeSerModificadoView extends JFrame {
 
 
 
-	public void setViews(ToleranciaAFallos usabilidad2, ReporteFinalView reporte2) {
-		this.usabilidad=usabilidad2;
-		this.reporte=reporte2;
+	public void setViews(CapacidadDeSerAnalizadoView capacidadDeSerAnalizado, Estabilidad estabilidad) {
+		this.usabilidad=capacidadDeSerAnalizado;
+		this.reporte=estabilidad;
 		
 	}
 	

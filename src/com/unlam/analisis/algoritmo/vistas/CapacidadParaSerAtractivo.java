@@ -91,7 +91,7 @@ public class CapacidadParaSerAtractivo extends JFrame {
 		contentPane.add(button_1);
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setText("Explicacion");
+		textArea.setText("Explicacion \n pepito");
 		textArea.setEditable(false);
 		textArea.setBackground(Color.LIGHT_GRAY);
 		textArea.setBounds(219, 80, 142, 109);

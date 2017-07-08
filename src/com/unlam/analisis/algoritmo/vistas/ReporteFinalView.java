@@ -39,6 +39,15 @@ public class ReporteFinalView extends JFrame {
 	private JTextField textField_3;
 	private JTextField textField_4;
 	private JTextField textField_5;
+	private int puntajeTotal;
+	private int puntajeFuncionabilidad;
+	private int puntajeEficiencia;
+	private int puntajeFiabilidad;
+	private int puntajeMantenibilidad;
+	private int puntajeUsabilidad;
+	private int puntajePortabilidad;
+	private JTextField textField_6;
+	private JTextField textField_7;
 
 	/**
 	 * Create the frame.
@@ -123,7 +132,7 @@ public class ReporteFinalView extends JFrame {
 				anterior();
 			}
 		});
-		btnNewButton.setBounds(97, 209, 89, 23);
+		btnNewButton.setBounds(96, 228, 89, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnSalir = new JButton("Salir");
@@ -132,8 +141,28 @@ public class ReporteFinalView extends JFrame {
 				cerrar();
 			}
 		});
-		btnSalir.setBounds(253, 209, 89, 23);
+		btnSalir.setBounds(257, 228, 89, 23);
 		contentPane.add(btnSalir);
+		
+		JLabel lblTotal = new JLabel("Total");
+		lblTotal.setBounds(26, 184, 46, 14);
+		contentPane.add(lblTotal);
+		
+		textField_6 = new JTextField();
+		textField_6.setEditable(false);
+		textField_6.setBounds(112, 181, 86, 20);
+		contentPane.add(textField_6);
+		textField_6.setColumns(10);
+		
+		JLabel lblResultado = new JLabel("Resultado");
+		lblResultado.setBounds(231, 184, 52, 14);
+		contentPane.add(lblResultado);
+		
+		textField_7 = new JTextField();
+		textField_7.setEditable(false);
+		textField_7.setBounds(317, 181, 86, 20);
+		contentPane.add(textField_7);
+		textField_7.setColumns(10);
 	}
 
 	protected void cerrar() {
@@ -148,7 +177,62 @@ public class ReporteFinalView extends JFrame {
 
 
 	public void calcular() {
-		// TODO hacer calculo.
+		calcularPuntajes();
+		llenarCampos(puntajeTotal>=30?"Satisfactorio":"No satisfactorio");
+
+	}
+
+	private void llenarCampos(String resultado) {
+		textField.setText(Integer.toString(puntajeFuncionabilidad));
+		textField_1.setText(Integer.toString(puntajeEficiencia));
+		textField_2.setText(Integer.toString(puntajeFiabilidad));
+		textField_3.setText(Integer.toString(puntajeMantenibilidad));
+		textField_4.setText(Integer.toString(puntajeUsabilidad));
+		textField_5.setText(Integer.toString(puntajePortabilidad));
+		textField_6.setText(Integer.toString(puntajeTotal));
+		textField_7.setText(resultado);
+	}
+
+	private void calcularPuntajes() {
+		puntajeTotal=0;
+		puntajeFuncionabilidad=darPuntos(seguridad.getOpcionElegida(),seguridad.isPonderada())
+								+darPuntos(exactitud.getOpcionElegida(),exactitud.isPonderada())+
+								darPuntos(adecuacion.getOpcionElegida(),adecuacion.isPonderada());
+		puntajeTotal+=puntajeFuncionabilidad;
+		
+		puntajeEficiencia=darPuntos(utilizacionRecursos.getOpcionElegida(),utilizacionRecursos.isPonderada())+
+				darPuntos(comportamientoTemporal.getOpcionElegida(),comportamientoTemporal.isPonderada());
+		puntajeTotal+=puntajeEficiencia;
+		
+		puntajeFiabilidad=darPuntos(capacidadDeRecuperacion.getOpcionElegida(),capacidadDeRecuperacion.isPonderada())+
+				darPuntos(toleranciaAFallos.getOpcionElegida(),toleranciaAFallos.isPonderada());
+		puntajeTotal+=puntajeFiabilidad;
+		
+		puntajeMantenibilidad=darPuntos(capacidadDeSerAnalizado.getOpcionElegida(),capacidadDeSerAnalizado.isPonderada())+
+				darPuntos(modificado.getOpcionElegida(),modificado.isPonderada())+
+				darPuntos(estabilidad.getOpcionElegida(),estabilidad.isPonderada());
+		puntajeTotal+=puntajeMantenibilidad;
+		
+		puntajeUsabilidad= darPuntos(capacidadDeSerEntendido.getOpcionElegida(),capacidadDeSerEntendido.isPonderada())+
+				darPuntos(capacidadDeSerOperado.getOpcionElegida(),capacidadDeSerOperado.isPonderada())+
+				darPuntos(capacidadParaSerAtractivo.getOpcionElegida(),capacidadParaSerAtractivo.isPonderada());
+		puntajeTotal+=puntajeUsabilidad;
+		
+		puntajePortabilidad= darPuntos(adaptabilidad.getOpcionElegida(),adaptabilidad.isPonderada())+
+				darPuntos(instalabilidad.getOpcionElegida(),instalabilidad.isPonderada());
+		puntajeTotal+=puntajePortabilidad;
+	}
+
+	private int darPuntos(String opcionElegida, boolean ponderada) {
+		int puntajeADevolver=0;
+		if(opcionElegida.equals("Bueno")){
+			 puntajeADevolver=2;
+		}
+		else if(opcionElegida.equals("Regular")){
+			puntajeADevolver=1;
+		}
+		
+		return ponderada?puntajeADevolver*2:puntajeADevolver;
 		
 	}
 

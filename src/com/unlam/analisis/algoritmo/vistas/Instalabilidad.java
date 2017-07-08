@@ -106,6 +106,7 @@ public class Instalabilidad extends JFrame {
 	protected void abrirSiguiente() {
 		if(buttonGroup.getSelection()!=null){			
 			this.setVisible(false);
+			usabilidad.calcular();
 			usabilidad.setVisible(true);
 		}
 		else{

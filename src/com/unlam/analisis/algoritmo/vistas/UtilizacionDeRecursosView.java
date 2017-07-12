@@ -93,13 +93,13 @@ public class UtilizacionDeRecursosView extends JFrame {
 		contentPane.add(button_1);
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setText("Explicacion");
+		textArea.setText("Consumo de memoria y\nprocesador");
 		textArea.setEditable(false);
 		textArea.setBackground(Color.LIGHT_GRAY);
 		textArea.setBounds(219, 80, 142, 109);
 		contentPane.add(textArea);
 		
-		JLabel lblFiabilidad = new JLabel("Utilización de los Recursos");
+		JLabel lblFiabilidad = new JLabel("Utilización de los recursos");
 		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblFiabilidad.setBounds(126, 11, 160, 48);
 		contentPane.add(lblFiabilidad);

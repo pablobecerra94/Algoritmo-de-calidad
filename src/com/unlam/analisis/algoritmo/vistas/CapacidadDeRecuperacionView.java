@@ -93,7 +93,7 @@ public class CapacidadDeRecuperacionView extends JFrame {
 		contentPane.add(btnFinalizar);
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setText("Explicacion");
+		textArea.setText("Reanudacion luego de\nerrores criticos");
 		textArea.setEditable(false);
 		textArea.setBackground(Color.LIGHT_GRAY);
 		textArea.setBounds(219, 80, 142, 109);

@@ -99,7 +99,7 @@ public class ExactitudView extends JFrame {
 		contentPane.add(button_1);
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setText("Explicacion");
+		textArea.setText("Informes realizados\ncorrectamente");
 		textArea.setEditable(false);
 		textArea.setBackground(Color.LIGHT_GRAY);
 		textArea.setBounds(227, 80, 142, 109);

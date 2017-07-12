@@ -90,7 +90,7 @@ public class CapacidadDeSerModificadoView extends JFrame {
 		contentPane.add(btnFinalizar);
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setText("Explicacion");
+		textArea.setText("Complejidad ciclomatica");
 		textArea.setEditable(false);
 		textArea.setBackground(Color.LIGHT_GRAY);
 		textArea.setBounds(219, 80, 142, 109);

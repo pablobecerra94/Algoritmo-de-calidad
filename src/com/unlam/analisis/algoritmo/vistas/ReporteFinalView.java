@@ -63,7 +63,7 @@ public class ReporteFinalView extends JFrame {
 		
 		JLabel lblCalificacin = new JLabel("Calificación");
 		lblCalificacin.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblCalificacin.setBounds(130, 11, 160, 48);
+		lblCalificacin.setBounds(158, 11, 160, 48);
 		contentPane.add(lblCalificacin);
 		
 		JLabel lblFuncionalidad = new JLabel("Funcionalidad");
@@ -77,7 +77,7 @@ public class ReporteFinalView extends JFrame {
 		textField.setColumns(10);
 		
 		JLabel lblEficiencia = new JLabel("Eficiencia");
-		lblEficiencia.setBounds(26, 106, 46, 14);
+		lblEficiencia.setBounds(26, 106, 76, 14);
 		contentPane.add(lblEficiencia);
 		
 		textField_1 = new JTextField();
@@ -87,7 +87,7 @@ public class ReporteFinalView extends JFrame {
 		textField_1.setColumns(10);
 		
 		JLabel lblFiabilidad = new JLabel("Fiabilidad");
-		lblFiabilidad.setBounds(26, 144, 46, 14);
+		lblFiabilidad.setBounds(26, 144, 87, 14);
 		contentPane.add(lblFiabilidad);
 		
 		textField_2 = new JTextField();
@@ -155,12 +155,12 @@ public class ReporteFinalView extends JFrame {
 		textField_6.setColumns(10);
 		
 		JLabel lblResultado = new JLabel("Resultado");
-		lblResultado.setBounds(231, 184, 52, 14);
+		lblResultado.setBounds(231, 184, 76, 14);
 		contentPane.add(lblResultado);
 		
 		textField_7 = new JTextField();
 		textField_7.setEditable(false);
-		textField_7.setBounds(317, 181, 86, 20);
+		textField_7.setBounds(317, 181, 107, 20);
 		contentPane.add(textField_7);
 		textField_7.setColumns(10);
 	}

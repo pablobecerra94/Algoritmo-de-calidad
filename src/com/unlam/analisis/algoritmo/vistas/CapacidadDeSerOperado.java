@@ -97,7 +97,7 @@ public class CapacidadDeSerOperado extends JFrame {
 		
 		JLabel lblFiabilidad = new JLabel("Capacidad de ser operado");
 		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblFiabilidad.setBounds(73, 11, 325, 48);
+		lblFiabilidad.setBounds(114, 11, 272, 48);
 		contentPane.add(lblFiabilidad);
 	}
 

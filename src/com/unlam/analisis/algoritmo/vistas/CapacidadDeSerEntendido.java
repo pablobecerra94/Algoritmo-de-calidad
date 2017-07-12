@@ -96,7 +96,7 @@ public class CapacidadDeSerEntendido extends JFrame {
 		
 		JLabel lblFiabilidad = new JLabel("Capacidad de ser entendido");
 		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblFiabilidad.setBounds(73, 11, 325, 48);
+		lblFiabilidad.setBounds(115, 11, 295, 48);
 		contentPane.add(lblFiabilidad);
 	}
 

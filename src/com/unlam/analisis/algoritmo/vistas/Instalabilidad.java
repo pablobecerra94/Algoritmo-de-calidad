@@ -97,7 +97,7 @@ public class Instalabilidad extends JFrame {
 		
 		JLabel lblFiabilidad = new JLabel("Instalabilidad");
 		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblFiabilidad.setBounds(126, 11, 160, 48);
+		lblFiabilidad.setBounds(168, 11, 160, 48);
 		contentPane.add(lblFiabilidad);
 	}
 

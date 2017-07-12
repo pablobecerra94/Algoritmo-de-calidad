@@ -97,7 +97,7 @@ public class Adaptabilidad extends JFrame {
 		
 		JLabel lblFiabilidad = new JLabel("Adaptabilidad");
 		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblFiabilidad.setBounds(130, 11, 160, 48);
+		lblFiabilidad.setBounds(163, 11, 160, 48);
 		contentPane.add(lblFiabilidad);
 	}
 

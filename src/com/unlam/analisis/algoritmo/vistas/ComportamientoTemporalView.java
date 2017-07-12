@@ -102,7 +102,7 @@ public class ComportamientoTemporalView extends JFrame {
 		
 		JLabel lblFiabilidad = new JLabel("Comportamiento temporal");
 		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblFiabilidad.setBounds(111, 11, 218, 48);
+		lblFiabilidad.setBounds(106, 11, 218, 48);
 		contentPane.add(lblFiabilidad);
 	}
 

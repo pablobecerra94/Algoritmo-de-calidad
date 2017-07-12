@@ -1,8 +1,6 @@
 package com.unlam.analisis.algoritmo.vistas;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -99,7 +97,7 @@ public class Adaptabilidad extends JFrame {
 		
 		JLabel lblFiabilidad = new JLabel("Adaptabilidad");
 		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblFiabilidad.setBounds(126, 11, 160, 48);
+		lblFiabilidad.setBounds(130, 11, 160, 48);
 		contentPane.add(lblFiabilidad);
 	}
 

@@ -44,7 +44,7 @@ public class ExactitudView extends JFrame {
 		
 		JLabel lblAdecuacion = new JLabel("Exactitud");
 		lblAdecuacion.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblAdecuacion.setBounds(134, 11, 160, 48);
+		lblAdecuacion.setBounds(156, 11, 160, 48);
 		contentPane.add(lblAdecuacion);
 		
 		JRadioButton radioButton = new JRadioButton("Bueno");

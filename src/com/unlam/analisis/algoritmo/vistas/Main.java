@@ -64,7 +64,7 @@ public class Main extends JFrame {
 		
 		JLabel lblAlgoritmoDeCalidad = new JLabel("Algoritmo de Calidad");
 		lblAlgoritmoDeCalidad.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblAlgoritmoDeCalidad.setBounds(60, 11, 317, 48);
+		lblAlgoritmoDeCalidad.setBounds(77, 11, 317, 48);
 		contentPane.add(lblAlgoritmoDeCalidad);
 		
 		JButton btnComenzar = new JButton("Comenzar");
@@ -73,7 +73,7 @@ public class Main extends JFrame {
 				comenzar();
 			}
 		});
-		btnComenzar.setBounds(163, 109, 89, 23);
+		btnComenzar.setBounds(163, 109, 110, 23);
 		contentPane.add(btnComenzar);
 	}
 

@@ -83,7 +83,7 @@ public class CapacidadDeRecuperacionView extends JFrame {
 		button.setBounds(59, 214, 89, 23);
 		contentPane.add(button);
 		
-		JButton btnFinalizar = new JButton("Finalizar");
+		JButton btnFinalizar = new JButton("Siguiente");
 		btnFinalizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				abrirSiguiente();
@@ -101,7 +101,7 @@ public class CapacidadDeRecuperacionView extends JFrame {
 		
 		JLabel lblFiabilidad = new JLabel("Capacidad de Recuperación");
 		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblFiabilidad.setBounds(126, 11, 160, 48);
+		lblFiabilidad.setBounds(73, 11, 325, 48);
 		contentPane.add(lblFiabilidad);
 	}
 

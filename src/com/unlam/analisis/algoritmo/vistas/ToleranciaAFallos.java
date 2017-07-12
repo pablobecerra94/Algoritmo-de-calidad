@@ -81,7 +81,7 @@ public class ToleranciaAFallos extends JFrame {
 		button.setBounds(59, 214, 89, 23);
 		contentPane.add(button);
 		
-		JButton btnFinalizar = new JButton("Finalizar");
+		JButton btnFinalizar = new JButton("Siguiente");
 		btnFinalizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				abrirSiguiente();

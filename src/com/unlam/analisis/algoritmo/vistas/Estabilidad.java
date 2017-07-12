@@ -17,6 +17,10 @@ import javax.swing.border.EmptyBorder;
 
 public class Estabilidad extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private CapacidadDeSerModificadoView usabilidad;
 	private CapacidadDeSerEntendido reporte;
@@ -79,7 +83,7 @@ public class Estabilidad extends JFrame {
 		button.setBounds(59, 214, 89, 23);
 		contentPane.add(button);
 		
-		JButton btnFinalizar = new JButton("Finalizar");
+		JButton btnFinalizar = new JButton("Siguiente");
 		btnFinalizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				abrirSiguiente();

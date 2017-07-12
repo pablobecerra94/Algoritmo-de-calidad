@@ -1,8 +1,6 @@
 package com.unlam.analisis.algoritmo.vistas;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -81,7 +79,7 @@ public class Instalabilidad extends JFrame {
 		button.setBounds(59, 214, 89, 23);
 		contentPane.add(button);
 		
-		JButton button_1 = new JButton("Siguiente");
+		JButton button_1 = new JButton("Finalizar");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				abrirSiguiente();

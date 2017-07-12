@@ -1,7 +1,6 @@
 package com.unlam.analisis.algoritmo.vistas;
 
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +17,10 @@ import javax.swing.border.EmptyBorder;
 
 public class CapacidadDeSerModificadoView extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private CapacidadDeSerAnalizadoView usabilidad;
 	private Estabilidad reporte;
@@ -80,7 +83,7 @@ public class CapacidadDeSerModificadoView extends JFrame {
 		button.setBounds(59, 214, 89, 23);
 		contentPane.add(button);
 		
-		JButton btnFinalizar = new JButton("Finalizar");
+		JButton btnFinalizar = new JButton("Siguiente");
 		btnFinalizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				abrirSiguiente();
@@ -98,7 +101,7 @@ public class CapacidadDeSerModificadoView extends JFrame {
 		
 		JLabel lblFiabilidad = new JLabel("Capacidad de Ser Modificado");
 		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblFiabilidad.setBounds(126, 11, 160, 48);
+		lblFiabilidad.setBounds(98, 11, 235, 48);
 		contentPane.add(lblFiabilidad);
 	}
 

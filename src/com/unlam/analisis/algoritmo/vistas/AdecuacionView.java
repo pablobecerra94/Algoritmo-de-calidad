@@ -101,7 +101,7 @@ public class AdecuacionView extends JFrame {
 		
 		JLabel lblFiabilidad = new JLabel("Adecuación");
 		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblFiabilidad.setBounds(126, 11, 160, 48);
+		lblFiabilidad.setBounds(140, 11, 160, 48);
 		contentPane.add(lblFiabilidad);
 	}
 

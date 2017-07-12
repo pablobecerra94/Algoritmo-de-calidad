@@ -97,7 +97,7 @@ public class CapacidadParaSerAtractivo extends JFrame {
 		
 		JLabel lblFiabilidad = new JLabel("Capacidad para ser atractivo");
 		lblFiabilidad.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblFiabilidad.setBounds(73, 11, 325, 48);
+		lblFiabilidad.setBounds(103, 11, 291, 48);
 		contentPane.add(lblFiabilidad);
 	}
 
